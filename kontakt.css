@@ -1,0 +1,761 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Oswald';
+}
+a, p, button, li, label{
+    font-family: 'poppins';
+}
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #252424;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+}
+
+ul li a {
+    position: relative; 
+}
+
+.nav_bar {
+    padding-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_bar a {
+    max-width: max-content;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: clamp(14px, 1vw, 90px);
+    z-index: 1;
+}
+
+
+.kontakt_nav{
+    background-color: #D01D23;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 2px;
+}
+.kontakt_nav:hover{
+    background-color: #b9181e;
+    transition: .3s;
+}
+
+
+
+.logo img {
+    width: clamp(100px, 10vw, 300px);
+}
+
+.nav_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 40vw;
+    background: linear-gradient(to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 65%
+    );
+}
+.navlist{
+    display: flex;
+    align-items: center;
+}
+.navlist li {
+    display: inline;
+    padding: 30px;
+}
+.underline::after{
+    content: '';
+    display: block;
+    background-color: #b9181e;
+    width: 0%;
+    height: 3px;
+    border-radius: 50px;
+}
+.underline:hover::after{
+    content: '';
+    display: block;
+    background-color: #b9181e;
+    width: 100%;
+    height: 3px;
+    transition: .3s;
+    border-radius: 50px;
+}
+.nav-links{
+    display: flex;
+}
+#menu-icon {
+    color: #D01D23;
+    font-size: 55px;
+    z-index: 1101;
+    cursor: pointer;
+    display: none;
+}
+
+.sticky {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fffcfc;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.nav_bar.sticky a {
+    color: #000000; /* temna barva */
+}
+.nav_bar.sticky .kontakt_nav {
+    color: #FFFFFF; /* temna barva */
+}
+@media(max-width: 1314px){
+    .nav_bar{
+        justify-content: space-around;
+        gap: 20vw;
+    }
+}
+@media (max-width:1035px){
+    .nav_bar.sticky a {
+        color: #FFFFFF; /* temna barva */
+    }
+    .nav_bar.sticky .kontakt_nav {
+        color: #FFFFFF; /* temna barva */
+    }
+    #menu-icon{
+        display: block;
+    }
+    .navlist{
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 60vh;
+        background: #252424;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 50px 10px;
+        transition: all .55s ease;
+    }
+    .navlist li {
+        padding: 23px 0; /* manj navpičnega razmaka */
+    }
+    .nav-links{
+        flex-direction: column;
+
+    }
+    .navlist a{
+        display: flex;
+        margin-left: 0;
+        color: #fff;
+        font-size: clamp(18px, 1.9vw, 90px)
+
+    }
+    .navlist.open{
+        right: 0;
+    }
+}
+
+
+
+
+
+
+
+#lang-select a, #lang-select p{
+    color: #ffffff;
+    font-size: clamp(10px, .8vw, 50px);
+    text-decoration: none;
+}
+.nav_bar.sticky #lang-select a,
+.nav_bar.sticky #lang-select p {
+    color: #000000;
+}
+#lang-select{
+    display: flex;
+    position: relative;
+    left: 5%;
+}
+#lang-select .active{
+    text-decoration: underline;
+}
+
+@media(max-width:1035px){
+    #lang-select a, #lang-select p{
+        color: #ffffff;
+        font-size: clamp(10px, 1.2vw, 50px);
+        text-decoration: none;
+    }
+    .nav_bar.sticky #lang-select a,
+    .nav_bar.sticky #lang-select p {
+        color: #ffffff;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero{
+    background-image: 
+    linear-gradient(
+            rgba(0, 0, 0, 0.60)
+        ), url(kontakt/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 60%,
+        0 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+#naslov, #podnaslov{
+    position: relative;
+    left: 10%;
+    color: #ffffff;
+}
+#naslov{
+    font-size: clamp(30px, 3vw, 120px) !important;
+    width: fit-content;
+}
+#podnaslov{
+    font-size: clamp(14px, 1.2vw, 80px);
+    font-weight: 100;
+    width: 40%;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+@media(max-width: 1000px){
+    .hero{
+        height: 50vh;
+    }
+}
+@media(max-width: 750px){
+    .hero{
+        height: 40vh;
+        clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 70%,
+        0 100%
+        );
+    }
+    #podnaslov{
+        width: 70%;
+    }
+
+}
+@media(max-width: 400px){
+
+    #podnaslov{
+        width: 80%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.vip {
+  position: relative;
+  display: inline-block;
+  background-color: #ff0000;
+  color: white;
+  padding: 0 1.8vw;
+  border: 1px solid #cc0000;
+
+  clip-path: polygon(
+    /* LEVI ROB (3 outward, 2 inward zigzags from top to bottom) */
+    0% 0%,       /* outward (1) */
+    0.5vw 25%,   /* inward (1) - changed from 10px to 0.5vw for responsiveness */
+    0% 50%,      /* outward (2) */
+    0.5vw 75%,   /* inward (2) - changed from 10px to 0.5vw */
+    0% 100%,     /* outward (3) */
+
+    /* SPODNJI ROB (straight across) */
+    calc(100% - 0.5vw) 100%,  /* changed from calc(100% - 10px) to match */
+
+    /* DESNI ROB (same as left: 3 outward, 2 inward zigzags from bottom to top) */
+    100% 100%,   /* outward (3) */
+    calc(100% - 0.5vw) 75%,   /* inward (2) - changed from calc(100% - 10px) */
+    100% 50%,    /* outward (2) */
+    calc(100% - 0.5vw) 25%,   /* inward (1) - changed from calc(100% - 10px) */
+    100% 0%,     /* outward (1) */
+
+    /* ZAKLJUČEK (back to start) */
+    0.5vw 0%     /* changed from 10px 0% to match */
+  );
+}
+.contact_obrazec{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10vw 5vw;
+}
+.contac_box{
+    background: rgb(255, 255, 255);
+    display: flex;
+    border-width: 0.01cm;
+    width: 90%;
+    height: 60vh;
+}
+
+.contact_left{
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+.contact_right{
+    flex-basis: 40%;
+    padding: 40px;
+    background-image: 
+    linear-gradient(
+        rgba(0, 0, 0, 0.6)
+    ), url(kontakt/kontakt.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1{
+    margin-bottom: 10px;
+}
+.container p{
+    margin-bottom: 40px;
+}
+.input_row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.input_row .input_group{
+    flex-basis: 45%;
+}
+input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #D01D23;
+    outline: none;
+    padding-bottom: 5px;
+    font-size: clamp(10px, .9vw, 50px);
+}
+textarea{
+    width: 100%;
+    border: 1px solid #D01D23;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+label{
+    font-size: clamp(10px, .9vw, 50px);
+    margin-bottom: 6px;
+    display: block;
+    color: #000000;
+    font-family: 'poppins';
+    font-weight: 600;
+}
+form button{
+    background: #D01D23;
+    padding: .6vw  1.5vw;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    border-radius: 3px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+    font-size: clamp(12px, .7vw, 50px);
+}
+form button:hover{
+    background-color: #b9181e;
+    cursor: pointer;
+    transition: 0.3s  ease-in-out;
+}
+.contact_left h3{
+    color: #D01D23;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: clamp(13px, 2vw, 50px);
+}
+.contact_right h3{
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: clamp(14px, 1.7vw, 90px);
+}
+tr td:first-child{
+    padding-right: 2vw;
+}
+tr td{
+    padding-top: 20px;
+    font-family: 'poppins';
+    font-size: clamp(10px, .8vw, 50px);
+}
+
+
+
+@media(max-width:1048px){
+    .contac_box{
+        flex-direction: column ;
+        height: 120vh;
+    }
+    .contact_left h3{
+        font-size: clamp(25px, 4vw, 50px);
+    }
+    .contact_right h3{
+        font-size: clamp(24px, 3vw, 90px);
+    }
+
+
+}
+@media(max-width: 1000px){
+    form button{
+        padding: 1vw  2vw;
+    }
+}
+@media(max-width: 650px){
+    form button{
+        padding: 1.3vw  2.5vw;
+    }
+}
+@media(max-width:600px){
+    .container{
+        width: 100%;
+    }
+    .container h1,p{
+        text-align: center;
+    }
+    .contact_left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+@media(max-width: 415px){
+    .contact_left{
+        padding: 15px 35px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:1200px){
+    iframe{
+        height: 60vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.noga{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2vw;
+}
+.noga h1{
+    color: #FFFFFF;
+    font-size: clamp(20px, 1.5vw, 120px);
+}
+.noga h1::after{
+    content: '';
+    display: flex;
+    height: 1px;
+    width: 100%;
+    background-color: #D01D23;
+    color: #D01D23;
+}
+.noga h2{
+    color: #FFFFFF;
+    font-size: clamp(12px, 1vw, 90px);
+    width: fit-content;
+}
+.podstrani .navlist2{
+    padding-top: 1vw;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 1vw;
+}
+.navlist2 li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: clamp(12px, .9vw, 90px);
+    font-weight: 100;
+}
+
+
+
+
+.storitve_vse {
+    padding-top: 1vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 stolpca */
+    grid-template-rows: auto auto; /* 2 vrsti */
+    gap: 1vw; /* razmik med blokci */
+    margin: 0 auto; /* poravnaj na sredino strani */
+    text-align: left;
+    max-width: fit-content;
+}
+.storitve .storitev{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    list-style-type: none;
+    width: fit-content;
+}
+.storitve .storitev li a{
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size: clamp(9px, .8vw, 50px);
+    text-decoration: none;
+}
+.torketiranje, .injektirnje, .bariere, .ojacitve{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+
+
+.kontakti{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vw;
+    gap: .5vw;
+}
+.kontakti a{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 100;
+    font-size: clamp(12px, .9vw, 90px);
+}
+
+
+
+
+
+
+
+
+@media(max-width: 1000px){
+    .storitve_vse {
+        padding-top: 1vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 stolpca */
+        grid-template-rows: auto auto; /* 2 vrsti */
+        gap: 1vw; /* razmik med blokci */
+        margin: 0 auto; /* poravnaj na sredino strani */
+        text-align: left;
+        max-width: 400px;
+    }
+    .storitve .storitev{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        line-height: 1.2;
+        align-items: flex-start;
+        list-style-type: none;
+        width: fit-content;
+    }
+}
+@media(max-width: 850px){
+    .noga{
+        flex-direction: column;
+        gap: 5vw;
+        padding: 5vw;
+    }
+    .storitve_vse{
+        max-width: 100%;
+    }
+    .storitve .storitev li a{
+        color: #FFFFFF;
+        font-weight: 100;
+        font-size: clamp(9px, 1.3vw, 50px);
+    }
+    .kontakti a{
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 100;
+        font-size: clamp(12px, 1.5vw, 90px);
+    }
+    .navlist2 li a{
+        text-decoration: none;
+        color: #FFFFFF;
+        font-size: clamp(12px, 1.5vw, 90px);
+        font-weight: 100;
+    }
+    .noga h2{
+        color: #FFFFFF;
+        font-size: clamp(12px, 1.7vw, 90px);
+        width: fit-content;
+    }
+    .noga h1{
+        color: #FFFFFF;
+        font-size: clamp(20px, 2vw, 120px);
+    }
+}
+
+@media(max-width: 550px){
+    .storitve_vse {
+        padding-top: 1vw;
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        margin: 0 auto;
+        text-align: left;
+    }
+}
